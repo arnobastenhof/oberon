@@ -1,3 +1,5 @@
+/* Ported from RISC.Mod.txt, part of the Oberon07 reference implementation. */
+
 #ifndef RISC_H_
 #define RISC_H_
 
