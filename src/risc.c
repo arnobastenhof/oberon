@@ -170,7 +170,11 @@ RISC_Interpret(const int sb, const int entry)
           break;
 
         default:
-          assert(0);
+          fprintf(stderr, "Unrecognized opcode: %x\n", op);
+
+          /* Force the interpreter to abort execution */
+          g_pc = kMaxSteps;
+          continue;
         }
         /* Store value in result register */
         g_reg[a] = val & 0xFFFFFFFF;

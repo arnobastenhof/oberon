@@ -54,7 +54,7 @@ $(PATHO)%_test.o : $(PATHS)%.c $(PATHO)
   $(CC) $(ALL_CFLAGS) -c $< -DTEST -o $@ -MD -MP
 
 $(PATHO)%.o : $(PATHS)%.c $(PATHO)
-  $(CC) $(ALL_CFLAGS) -c $< -o $@ -MD -MP
+  $(CC) $(ALL_CFLAGS) -DNDEBUG -c $< -o $@ -MD -MP
 
 # executable
 
