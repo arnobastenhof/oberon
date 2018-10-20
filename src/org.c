@@ -743,7 +743,7 @@ ORG_Set(item_t * const x, item_t * const y)
   } else {
     /* x = -1 << x. E.g., if x = 2, -1 << x = 0B1111 1100. */
     if (x->mode == kModeImmediate && x->a <= 16) {
-      x->a = -1 << x->a;
+      x->a = ~0u << x->a;
     } else {
       Load(x);
       Put1(kOpMov, g_rh, 0, -1);              /* RH := -1 */
@@ -752,7 +752,7 @@ ORG_Set(item_t * const x, item_t * const y)
 
     /* y = -2 << y. E.g, if y = 4, -2 << y = 0B1110 0000. */
     if (y->mode == kModeImmediate && y->a < 16) {
-      Put1(kOpMov, g_rh, 0, -2 << y->a);      /* RH := -2 << y */
+      Put1(kOpMov, g_rh, 0, ~1u << y->a);      /* RH := -2 << y */
       y->mode = kModeReg;
       y->r = g_rh;
       IncR();

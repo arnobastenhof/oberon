@@ -760,7 +760,7 @@ Set(item_t * const x)
 static inline bool
 MatchExpr(const int sym)
 {
-  return g_sym >= kSymChar && g_sym <= kSymIdent;
+  return sym >= kSymChar && sym <= kSymIdent;
 }
 
 static void

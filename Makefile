@@ -15,8 +15,7 @@ PATHO = build/obj/
 
 # commands and flags
 CC = gcc
-# CFLAGS = -Wall -Wextra -Wpedantic -Werror
-CFLAGS = -Wall -Wpedantic -Werror
+CFLAGS = -Wall -Wextra -Wpedantic -Werror
 ALL_CFLAGS = -g -O3 -std=c99 -I$(PATHS) $(CFLAGS)
 
 # file lists

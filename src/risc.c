@@ -116,7 +116,7 @@ RISC_Interpret(const int sb, const int entry)
           break;
 
         case kOpRor:
-          val = (((b >> n) & ~(~0 << (32 - n))) | (b << (32 - n)));
+          val = (((b >> n) & ~(~0u << (32 - n))) | (b << (32 - n)));
           break;
 
         case kOpLsl: val = b << n; break;
