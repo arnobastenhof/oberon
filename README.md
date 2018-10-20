@@ -32,6 +32,7 @@ mainly served self-educational purposes.
 
 * GCC or Clang (C99-compatible)
 * GNU Make
+* [Optional] Valgrind (Remove from Makefile if not present on your system)
 
 ## Installation
 
