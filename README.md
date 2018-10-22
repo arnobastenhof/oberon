@@ -3,8 +3,10 @@
 ## Introduction
 
 The current codebase ports a subset of Wirth's reference implementation for
-the Oberon07 language to C (i.e., concerning the Oberon compiler, not the OS).
-Some notable omissions and deviations are:
+the Oberon07 language to C (i.e., concerning the Oberon compiler, not the OS)
+and was written primarily for self-educational purposes. Some notable
+omissions and deviations are outlined below, which may be remedied in future
+versions.
 * No generation of object- and symbol files. Instead, the compiler combines
   with a RISC-0 emulator into a single executable, with an in-memory array
   serving as their interface. Compare this to the implementation of PL/0 found
@@ -25,8 +27,6 @@ Some notable omissions and deviations are:
 * Despite the absence of `NEW`, `POINTER`s can still be used, albeit only
   through recource to the unsafe `SYSTEM.ADR` and `SYSTEM.VAL` functions. See
   `test/pointer.mod` for an example.
-Future versions may remedy some of these issues (or not). Note this project
-mainly served self-educational purposes.
 
 ## Requirements
 
@@ -87,8 +87,9 @@ Minunit test framework (see `minunit.h` and `minunit.c`).
   probably be to expose Java-style getters instead as part of a header, while
   keeping the variables themselves private to the implementation (i.e.,
   declared `static`). Though normally I would feel hestitant to use global
-  variables with external linkage in C, I have nonetheless chosen to stay close
-  to the source materials in this particular case.
+  variables with external linkage in C, which differs from Oberon in this
+  respect, I have nonetheless chosen to stay close to the source materials in
+  this particular case.
 * In his book 'C interfaces and implementations,' Hanson advocates the use
   of opaque pointers in header files to hide the implementation details of
   one's data structures. Though certainly the better programming practice, 
