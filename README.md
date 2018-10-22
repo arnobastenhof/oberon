@@ -3,10 +3,10 @@
 ## Introduction
 
 The current codebase ports a subset of Wirth's reference implementation for
-the Oberon07 language to C (i.e., concerning the Oberon compiler, not the OS)
-and was written primarily for self-educational purposes. Some notable
-omissions and deviations are outlined below, which may be remedied in future
-versions.
+the Oberon07 language to C (i.e., concerning the Oberon compiler, not the OS).
+It was written primarily for self-educational purposes as a kind of intensive
+code reading exercise. Some notable omissions and deviations are outlined
+below, which may be remedied in future versions:
 * No generation of object- and symbol files. Instead, the compiler combines
   with a RISC-0 emulator into a single executable, with an in-memory array
   serving as their interface. Compare this to the implementation of PL/0 found
@@ -120,6 +120,23 @@ Minunit test framework (see `minunit.h` and `minunit.c`).
 * Statement blocks following keywords that signal conditional- and loop
   constructs are delimited by braces, with the sole exception of empty blocks,
   where I resort to a single properly indented `;`.
+
+## Roadmap
+
+I tend to work on private projects for one or two months at a time, with the
+current codebase the result of such an iteration. The limitations mentioned
+in the introduction are, in particular, a consequence of this self-imposed
+time constraint. When I pick this codebase up again, my priorities will
+likely be as found below. All these, it should be noted, concern parts of the
+original source code that I hadn't ported yet.
+
+* Separate the parser from the interpreter through the generation of object
+  files.
+* Generate symbol files.
+* Support imports.
+* Support type descriptors along with dynamic allocations and garbage
+  collection.
+* Support case statements.
 
 ## Further reading
 
