@@ -1,4 +1,5 @@
 #ifndef EXCEPT_H_
+#define EXCEPT_H_
 
 #include <setjmp.h>
 #include <stdlib.h>
